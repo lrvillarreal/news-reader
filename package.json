@@ -1,0 +1,16 @@
+{
+  "//": "package.json",
+  "name": "news-reader",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "server:install": "npm install && npm --prefix server install && npm --prefix web install",
+    "server:dev": "npm --prefix server run dev",
+    "web:dev": "node scripts/generate-placeholder.cjs && npm --prefix web run dev",
+    "dev": "concurrently --kill-others -n API,WEB -c cyan,magenta \"npm run server:dev\" \"npm run web:dev\"",
+    "build": "node scripts/generate-placeholder.cjs && npm --prefix web run build"
+  },
+  "devDependencies": {
+    "concurrently": "8.2.2"
+  }
+}

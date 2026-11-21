@@ -1,0 +1,27 @@
+# .gitignore
+
+# Dependencies
+node_modules/
+
+# Build artifacts
+dist/
+coverage/
+*.tsbuildinfo
+
+# Secrets — never commit
+.env
+.env.*
+**/.env
+**/.env.*
+
+# Allow example configuration
+!.env.example
+!**/.env.example
+
+# Logs and local files
+*.log
+.DS_Store
+Thumbs.db
+
+# Generated placeholder asset
+web/public/placeholder.png
