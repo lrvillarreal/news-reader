@@ -301,8 +301,16 @@ app.get("/api/news/all", async (req, res) => {
   }
 });
 
-app.listen(PORT, "127.0.0.1", () => {
-  console.log(
-    `[news-proxy] Running on http://127.0.0.1:${PORT}`
-  );
-});
+// server/server.js
+
+// Start the server only when running locally.
+if (require.main === module) {
+  app.listen(PORT, "127.0.0.1", () => {
+    console.log(
+      `[news-proxy] Running on http://127.0.0.1:${PORT}`
+    );
+  });
+}
+
+// Allow Vercel Functions to reuse the Express app.
+module.exports = app;

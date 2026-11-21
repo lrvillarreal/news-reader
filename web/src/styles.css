@@ -728,6 +728,7 @@ input:focus-visible {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   overflow: hidden;
   max-width: 730px;
   margin: 19px 0 0;
